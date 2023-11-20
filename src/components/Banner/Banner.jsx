@@ -2,7 +2,7 @@ import { useEffect } from "react";
 import initializeVanta from "../VantaComponent";
 import { Container } from "semantic-ui-react";
 import { Typography } from "@material-ui/core";
-// import Carousel from "./Carousel";
+import Carousel from "./Carousel";
 const Banner = () => {
   useEffect(() => {
     initializeVanta();
@@ -58,7 +58,7 @@ const Banner = () => {
          
        
            </div>
-
+         <Carousel/>
       </Container>
     </div>
   );
