@@ -3,6 +3,8 @@ import initializeVanta from "../VantaComponent";
 import { Container } from "semantic-ui-react";
 import { Typography } from "@material-ui/core";
 import Carousel from "./Carousel";
+import CarouselCaching from "./CarouselCaching";
+
 const Banner = () => {
   useEffect(() => {
     initializeVanta();

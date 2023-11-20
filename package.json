@@ -13,6 +13,7 @@
     "axios": "^1.6.2",
     "jsonc": "^2.0.0",
     "react": "^18.2.0",
+    "react-alice-carousel": "^2.8.0",
     "react-dom": "^18.2.0",
     "three": "^0.158.0",
     "vanta": "^0.5.24"
