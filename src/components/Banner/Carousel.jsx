@@ -6,10 +6,13 @@ import { useState, useEffect } from "react";
 import AliceCarousel from "react-alice-carousel";
 import "react-alice-carousel/lib/alice-carousel.css";
 import { Link } from "react-router-dom";
+import { yellow } from "@material-ui/core/colors";
+import { Typography } from '@material-ui/core';
 const Carousel = () => {
   const [trending, setTrending] = useState([]);
   const [lastRequestTime, setLastRequestTime] = useState(0);
   const { currency } = CryptoState();
+  let dummy=false;
   const fetchTrendingCoins = async () => {
     try {
       const currentTime = new Date().getTime();
@@ -22,10 +25,14 @@ const Carousel = () => {
       }
 
       const { data } = await axios.get(TrendingCoins(currency));
+      console.log(data);
       setTrending(data);
+      
       setLastRequestTime(new Date().getTime());
     } catch (error) {
-     console.log("error");
+      dummy=true;
+
+     
     }
   };
  
@@ -48,9 +55,18 @@ const Carousel = () => {
   };
 
   const items=trending.map((coin)=>{
+    let profit=coin.price_change_percentage_24h >=0;
     return(
       <Link to={`/coins/${coin.id}`}>
      <img src={coin.image} alt={coin.name} height="80" style={{marginBottom:10,marginTop:20}} />
+     <span>{coin?.symbol}</span>
+     &nbsp;
+     <span>
+     { profit&&"+"} <Typography style={{color:yellow}}>
+     {coin?.price_change_percentage_24h.toFixed(2)}%
+     </Typography>
+
+     </span>
       </Link>
     )
   })

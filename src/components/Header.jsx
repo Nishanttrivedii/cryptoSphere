@@ -36,7 +36,7 @@ const Header = () => {
               <HeaderContainer>
                 <Typography
                   onClick={handleLogoClick}
-                  sx={{
+                  style={{
                     fontWeight: "bold",
                     cursor: "pointer",
                     fontSize: "1.3rem",

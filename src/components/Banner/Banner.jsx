@@ -4,7 +4,9 @@ import { Container } from "semantic-ui-react";
 import { Typography } from "@material-ui/core";
 import Carousel from "./Carousel";
 import CarouselCaching from "./CarouselCaching";
-
+import dummyDataCarousel from "./dummyDataCarousel";
+import DummyDataCarousel from "./dummyDataCarousel";
+import cryptox from "../../dummyData";
 const Banner = () => {
   useEffect(() => {
     initializeVanta();
@@ -28,7 +30,8 @@ const Banner = () => {
             display: "flex",
             textAlign: "center",
             flexDirection: "column",
-            justifyContent: "center"
+            justifyContent: "center",
+            
           }}
            >
 
@@ -38,6 +41,7 @@ const Banner = () => {
               fontWeight: "bold",
               color:"#4ee5a9",
               marginBottom: 15,
+              marginTop:30,
               fontFamily: "Montserrat",
               
             }}
@@ -60,7 +64,7 @@ const Banner = () => {
          
        
            </div>
-         <Carousel/>
+         <DummyDataCarousel/>
       </Container>
     </div>
   );
